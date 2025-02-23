@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header"; // Import your Header component
 import Footer from "../components/Footer"; // Import your Footer component
@@ -9,7 +10,15 @@ import {
   YouTubeIcon,
 } from "../assets/SocialIcons.jsx"; // Replace with your social media icons
 
+import useDocumentTitle from "../helpers/useDocumentTitle.jsx.jsx";
+
 export default function ContactPage() {
+  useDocumentTitle("Contact - Jobater");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-gray-900">
       {/* Header */}

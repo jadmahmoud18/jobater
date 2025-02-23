@@ -16,17 +16,24 @@ import SuccessStoriesPage from "./Pages/SuccessStories.jsx";
 import ContactPage from "./Pages/Contact.jsx";
 import CareersPage from "./Pages/Careers.jsx";
 import NewsPage from "./Pages/News.jsx";
+import AboutLayout from "./helpers/AboutLayout.jsx"; // Import the shared layout
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/about/resume-builder" element={<ResumeBuilderPage />} />
-        <Route path="/about/job-bank" element={<JobBankPage />} />
-        <Route path="/about/career-guide" element={<CareerGuidePage />} />
-        <Route path="/about/enterprise" element={<EnterprisePage />} />
+        <Route path="/about" element={<AboutLayout />}>
+          <Route index element={<AboutPage />} /> {/* /about */}
+          <Route path="resume-builder" element={<ResumeBuilderPage />} />{" "}
+          {/* /about/resume-builder */}
+          <Route path="job-bank" element={<JobBankPage />} />{" "}
+          {/* /about/job-bank */}
+          <Route path="career-guide" element={<CareerGuidePage />} />{" "}
+          {/* /about/career-guide */}
+          <Route path="enterprise" element={<EnterprisePage />} />{" "}
+          {/* /about/enterprise */}
+        </Route>
         <Route path="/success-stories" element={<SuccessStoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/careers" element={<CareersPage />} />

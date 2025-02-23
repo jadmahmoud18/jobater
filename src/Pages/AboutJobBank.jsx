@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header"; // Import your Header component
 import Footer from "../components/Footer"; // Import your Footer component
@@ -7,7 +8,14 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 
+import useDocumentTitle from "../helpers/useDocumentTitle.jsx";
+
 export default function JobBankPage() {
+  useDocumentTitle("Job Bank - About - Jobater");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-gray-900">
       {/* Header */}

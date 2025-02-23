@@ -1,7 +1,17 @@
+import { useEffect } from "react";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
 
+import useDocumentTitle from "../helpers/useDocumentTitle.jsx";
+
 export default function NotFoundPage() {
+  useDocumentTitle("Page Not Found!");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative isolate bg-gray-900 min-h-screen flex items-center justify-center px-6 sm:px-8 overflow-hidden">
       {/* Background Animation */}
