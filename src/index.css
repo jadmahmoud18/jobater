@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar */
+/* Works in Chrome, Edge, and Safari */
+
+/* Track */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c8b1ff; /* Purple color for the scrollbar handle */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid transparent; /* Transparent border */
+  background-clip: padding-box; /* Ensures the border doesn't overlap the background */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #805ad5; /* Lighter purple on hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f3e8ff; /* Light purple background for the track */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Firefox Support */
+/* Note: Firefox uses a different property for scrollbar styling */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #c8b1ff #f3e8ff; /* thumb and track color */
+}
